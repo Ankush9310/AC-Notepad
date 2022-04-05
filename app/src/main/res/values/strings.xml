@@ -5,7 +5,7 @@
 
     // Alert back button
     <string name="dialogTitle">Warning</string>
-    <string name="dialogMessage">Do you want to exit?</string>
+    <string name="dialogMessage">Are you sure you want to exit?</string>
 
 
 </resources>

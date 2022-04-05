@@ -74,6 +74,7 @@ class MainActivity : AppCompatActivity(), NoteClickDeleteInterface, NoteClickInt
         }
 
         val alertDialog: AlertDialog = builder.create()
+        alertDialog.setCancelable(false)
         alertDialog.show()
 
     }

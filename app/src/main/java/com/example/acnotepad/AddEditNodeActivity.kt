@@ -69,9 +69,4 @@ class AddEditNodeActivity : AppCompatActivity() {
 
     }
 
-    override fun onBackPressed() {
-        val int = Intent(this, MainActivity :: class.java)
-        startActivity(int)
-    }
-
 }
