@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
+import com.example.acnotepad.roomdb.Note
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -16,7 +17,7 @@ class AddEditNodeActivity : AppCompatActivity() {
     lateinit var noteDescriptionEdit: EditText
     lateinit var addUpdateButton: Button
     lateinit var viewModel: NoteViewModel
-    var noteID = -1;
+    var noteID = -1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,11 +33,11 @@ class AddEditNodeActivity : AppCompatActivity() {
             val noteTitle = intent.getStringExtra("noteTitle")
             val noteDesc = intent.getStringExtra("noteDescription")
             noteID = intent.getIntExtra("noteID",-1)
-            addUpdateButton.setText("Update Note")
+            addUpdateButton.text = "Update Note"
             noteTitleEdit.setText(noteTitle)
             noteDescriptionEdit.setText(noteDesc)
         } else {
-            addUpdateButton.setText("Save Note")
+            addUpdateButton.text = "Save Note"
         }
 
         addUpdateButton.setOnClickListener{
@@ -65,5 +66,12 @@ class AddEditNodeActivity : AppCompatActivity() {
             this.finish()
 
         }
+
     }
+
+    override fun onBackPressed() {
+        val int = Intent(this, MainActivity :: class.java)
+        startActivity(int)
+    }
+
 }

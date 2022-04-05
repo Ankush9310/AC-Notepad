@@ -1,14 +1,15 @@
 package com.example.acnotepad
 
+import android.app.AlertDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.service.controls.actions.FloatAction
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.acnotepad.roomdb.Note
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MainActivity : AppCompatActivity(), NoteClickDeleteInterface, NoteClickInterface {
@@ -54,6 +55,26 @@ class MainActivity : AppCompatActivity(), NoteClickDeleteInterface, NoteClickInt
         intent.putExtra("noteID",note.id)
         startActivity(intent)
         this.finish()
+
+    }
+
+    override fun onBackPressed() {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle(R.string.dialogTitle)
+        builder.setMessage(R.string.dialogMessage)
+
+        builder.setPositiveButton("Yes") {
+            dialogInterface, which ->
+            finish()
+        }
+
+        builder.setNegativeButton("No") {
+                dialogInterface, which ->
+            dialogInterface.cancel()
+        }
+
+        val alertDialog: AlertDialog = builder.create()
+        alertDialog.show()
 
     }
 }

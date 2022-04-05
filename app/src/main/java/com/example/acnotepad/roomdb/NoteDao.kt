@@ -1,4 +1,4 @@
-package com.example.acnotepad
+package com.example.acnotepad.roomdb
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
@@ -10,10 +10,10 @@ interface NoteDao {
     suspend fun insert(note: Note)
 
     @Update
-    suspend fun update(note:Note)
+    suspend fun update(note: Note)
 
     @Delete
-    suspend fun delete(note:Note)
+    suspend fun delete(note: Note)
 
     @Query("Select * from notesTable order by id ASC")
     fun getAllNotes(): LiveData<List<Note>>

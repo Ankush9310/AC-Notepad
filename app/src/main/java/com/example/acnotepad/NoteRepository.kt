@@ -1,6 +1,8 @@
 package com.example.acnotepad
 
 import androidx.lifecycle.LiveData
+import com.example.acnotepad.roomdb.Note
+import com.example.acnotepad.roomdb.NoteDao
 
 class NoteRepository(private val noteDao: NoteDao) {
 

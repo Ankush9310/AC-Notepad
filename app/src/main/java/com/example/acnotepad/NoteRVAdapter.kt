@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.acnotepad.roomdb.Note
 
 class NoteRVAdapter(val context: Context,
                     val noteClickInterface: NoteClickInterface,
@@ -27,8 +28,8 @@ class NoteRVAdapter(val context: Context,
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.noteTV.setText(allNotes.get(position).noteTitle)
-        holder.timeTV.setText("Last Updated: " + allNotes.get(position).timeStamp)
+        holder.noteTV.text = allNotes.get(position).noteTitle
+        holder.timeTV.text = "Last Updated: " + allNotes.get(position).timeStamp
 
         holder.deleteIV.setOnClickListener{
             noteClickDeleteInterface.onDeleteIconClick(allNotes.get(position))

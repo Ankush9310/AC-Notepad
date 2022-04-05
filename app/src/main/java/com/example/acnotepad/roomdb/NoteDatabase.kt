@@ -1,10 +1,9 @@
-package com.example.acnotepad
+package com.example.acnotepad.roomdb
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import java.security.AccessControlContext
 
 @Database(entities = arrayOf(Note::class), version = 1, exportSchema = false)
 abstract class NoteDatabase : RoomDatabase() {
@@ -15,7 +14,7 @@ abstract class NoteDatabase : RoomDatabase() {
         @Volatile
         private var INSTANCE : NoteDatabase? =null
 
-        fun getDatabase(context: Context): NoteDatabase{
+        fun getDatabase(context: Context): NoteDatabase {
             return INSTANCE ?: synchronized(this){
                 val instance = Room.databaseBuilder(
                     context.applicationContext, NoteDatabase::class.java,"note_database"

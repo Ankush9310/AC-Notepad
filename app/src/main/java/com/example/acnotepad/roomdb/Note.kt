@@ -1,4 +1,4 @@
-package com.example.acnotepad
+package com.example.acnotepad.roomdb
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

@@ -4,6 +4,8 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
+import com.example.acnotepad.roomdb.Note
+import com.example.acnotepad.roomdb.NoteDatabase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
